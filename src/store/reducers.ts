@@ -6,6 +6,6 @@ import { todosReducer } from '@modules/todos';
 
 export const createRootReducer = (history: History) =>
   combineReducers({
-    quiz: todosReducer,
+    todos: todosReducer,
     router: connectRouter(history),
   });
