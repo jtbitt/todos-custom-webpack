@@ -9,13 +9,13 @@ export const Todos = () => {
 
   useFetching(quizActions.fetch);
 
-  if (isLoading) {
-    return <LoadingIndicator />;
-  }
+  // if (isLoading) {
+  //   // return <LoadingIndicator />;
+  // }
 
-  if (isError) {
-    throw new Error('Failed fetching data from the API');
-  }
+  // if (isError) {
+  //   throw new Error('Failed fetching data from the API');
+  // }
 
-  // return mapStageToQuizComponent[quizStage];
+  return <div>cool</div>;
 };

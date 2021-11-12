@@ -8,24 +8,24 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 import { ErrorBoundary } from './ErrorBoundary';
 // import { Layout } from './Layout';
-// import { Routes } from './Routes';
+import { Routes } from './Routes';
 
 export const App = () => {
   return (
     <StrictMode>
       {/* <Provider store={store}> */}
-      {/* <Router> */}
-      {/* <CssBaseline> */}
-      {/* <Layout> */}
-      <ErrorBoundary>
-        {/* <Suspense fallback={<LoadingIndicator />}> */}
-        {/* <Routes /> */}
-        <div>Hello new boilerplate</div>
-        {/* </Suspense> */}
-      </ErrorBoundary>
-      {/* </Layout> */}
-      {/* </CssBaseline> */}
-      {/* </Router> */}
+      <Router>
+        {/* <CssBaseline> */}
+        {/* <Layout> */}
+        <ErrorBoundary>
+          {/* <Suspense fallback={<LoadingIndicator />}> */}
+          <Routes />
+          <div>Hello new boilerplate</div>
+          {/* </Suspense> */}
+        </ErrorBoundary>
+        {/* </Layout> */}
+        {/* </CssBaseline> */}
+      </Router>
       {/* </Provider> */}
     </StrictMode>
   );
