@@ -1,7 +1,7 @@
 import { fork } from 'redux-saga/effects';
 
-// import { quizSaga } from '@modules/quiz';
+import { todosSaga } from '@modules/todos';
 
 export function* rootSaga() {
-  // yield fork(quizSaga);
+  yield fork(todosSaga);
 }
