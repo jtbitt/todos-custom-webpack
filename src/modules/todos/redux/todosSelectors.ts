@@ -14,3 +14,8 @@ export const fetchingSelector = createSelector(
     isError,
   }),
 );
+
+export const todosSelector = createSelector(
+  selectTodos,
+  ({ todos }) => todos,
+);
