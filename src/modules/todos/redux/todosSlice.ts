@@ -9,16 +9,16 @@ export type TTodo = {
 
 export interface ITodosState {
   todos: TTodo[];
-  filteredTodos: TTodo[];
-  paginatedTodos: TTodo[];
+  searchQuery: string;
+  completed: string;
   isError: boolean;
   isLoading: boolean;
 }
 
 export const initialState: ITodosState = {
   todos: [],
-  filteredTodos: [],
-  paginatedTodos: [],
+  searchQuery: "",
+  completed: "",
   isLoading: true,
   isError: false,
 };
@@ -27,9 +27,13 @@ const todosSlice = createSlice({
   name: 'todos',
   initialState,
   reducers: {
-    // saveUserAnswer: (state, action: PayloadAction<boolean>) => {
-    //   state.userAnswers = [...state.userAnswers, action.payload];
-    // },
+    updateSearchQuery: (state, action: PayloadAction<string>) => {
+      console.log(action);
+      state.searchQuery = action.payload;
+    },
+    updateCompletedFilter: (state, action: PayloadAction<string>) => {
+      state.completed = action.payload;
+    },
     fetch: (state) => {
       (state.todos = []),
       (state.isLoading = true),
