@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
-import Input from '@mui/material/Input';
-import Select from '@mui/material/Select';
-import MenuItem from '@mui/material/MenuItem';
-import Grid from '@mui/material/Grid';
+import { Input, Select, MenuItem, Grid } from '@components';
 import { SelectChangeEvent } from '@mui/material';
 
 import { useAppDispatch } from '@store';
@@ -16,7 +13,7 @@ export const DataFilter = ({ data }: any) => {
     dispatch(todosActions.updateSearchQuery(event.target.value));
   };
 
-  const handleCompletedFilter = (event: SelectChangeEvent) => {
+  const handleCompletedFilter = (event: SelectChangeEvent<unknown>) => {
     const target = event.target as HTMLInputElement;
     setCompleted(target.value);
     dispatch(todosActions.updateCompletedFilter(target.value));
@@ -24,7 +21,7 @@ export const DataFilter = ({ data }: any) => {
 
   return (
     <Grid container spacing={2} direction="row">
-      <Grid item xs={12} lg={6} style={{ marginTop: '1.3rem' }}>
+      <Grid item xs={12} lg={6} sx={{ marginTop: '1.3rem' }}>
         <Input
           placeholder="Search todos..."
           onChange={handleSearchQuery}
