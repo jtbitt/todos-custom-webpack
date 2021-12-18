@@ -6,5 +6,5 @@ export { Grid } from './Grid';
 export { Typography } from './Typography';
 export { Button } from './Button';
 export { Container } from './Container';
-// export { Paper } from './Paper';
+export { Paper } from './Paper';
 export { Alert } from './Alert';

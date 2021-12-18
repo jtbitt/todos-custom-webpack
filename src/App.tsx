@@ -7,7 +7,7 @@ import { store } from '@store';
 // import { LoadingIndicator } from '@components';
 
 import { ErrorBoundary } from './ErrorBoundary';
-// import { Layout } from './Layout';
+import { Layout } from './Layout';
 import { Routes } from './Routes';
 
 export const App = () => {
@@ -16,13 +16,13 @@ export const App = () => {
       <Provider store={store}>
         <Router>
           {/* <CssBaseline> */}
-          {/* <Layout> */}
-          <ErrorBoundary>
-            <Suspense fallback={<div>loading...</div>}>
-              <Routes />
-            </Suspense>
-          </ErrorBoundary>
-          {/* </Layout> */}
+          <Layout>
+            <ErrorBoundary>
+              <Suspense fallback={<div>loading...</div>}>
+                <Routes />
+              </Suspense>
+            </ErrorBoundary>
+          </Layout>
           {/* </CssBaseline> */}
         </Router>
       </Provider>

@@ -11,6 +11,7 @@ export interface ITodosState {
   todos: TTodo[];
   searchQuery: string;
   completed: string;
+  pageSize: number;
   isError: boolean;
   isLoading: boolean;
 }
@@ -19,6 +20,7 @@ export const initialState: ITodosState = {
   todos: [],
   searchQuery: "",
   completed: "",
+  pageSize: 20,
   isLoading: true,
   isError: false,
 };
@@ -28,7 +30,6 @@ const todosSlice = createSlice({
   initialState,
   reducers: {
     updateSearchQuery: (state, action: PayloadAction<string>) => {
-      console.log(action);
       state.searchQuery = action.payload;
     },
     updateCompletedFilter: (state, action: PayloadAction<string>) => {

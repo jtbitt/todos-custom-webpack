@@ -1,15 +1,11 @@
-// import { Paper as MUIPaper, PaperProps, makeStyles } from '@mui/material';
+import { Paper as MUIPaper, PaperProps, styled } from '@mui/material';
 
-// const useStyles = makeStyles({
-//   paperHolder: {
-//     height: '100%',
-//     padding: '1rem',
-//     position: 'relative',
-//   },
-// });
+const PaperHolder = styled(MUIPaper)(() => ({
+  height: '100%',
+  padding: '1rem',
+  position: 'relative',
+}));
 
-// export const Paper = (props: PaperProps) => {
-//   const { paperHolder } = useStyles();
-
-//   return <MUIPaper className={paperHolder} {...props} />;
-// };
+export const Paper = (props: PaperProps) => {
+  return <PaperHolder {...props} />;
+};
