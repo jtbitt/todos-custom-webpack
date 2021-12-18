@@ -1,10 +1,10 @@
 import { StrictMode, Suspense } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
-// import { CssBaseline } from '@material-ui/core';
+import CssBaseline from '@mui/material/CssBaseline';
 
 import { store } from '@store';
-// import { LoadingIndicator } from '@components';
+import { LoadingIndicator } from '@components';
 
 import { ErrorBoundary } from './ErrorBoundary';
 import { Layout } from './Layout';
@@ -15,15 +15,15 @@ export const App = () => {
     <StrictMode>
       <Provider store={store}>
         <Router>
-          {/* <CssBaseline> */}
-          <Layout>
-            <ErrorBoundary>
-              <Suspense fallback={<div>loading...</div>}>
-                <Routes />
-              </Suspense>
-            </ErrorBoundary>
-          </Layout>
-          {/* </CssBaseline> */}
+          <CssBaseline>
+            <Layout>
+              <ErrorBoundary>
+                <Suspense fallback={<LoadingIndicator />}>
+                  <Routes />
+                </Suspense>
+              </ErrorBoundary>
+            </Layout>
+          </CssBaseline>
         </Router>
       </Provider>
     </StrictMode>
