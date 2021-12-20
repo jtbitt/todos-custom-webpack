@@ -1,9 +1,9 @@
 {
-  "name": "todos-custom",
+  "name": "todos-custom-webpack",
   "version": "0.0.1",
-  "description": "Demo coding challenge with custom setup",
+  "description": "Demo coding challenge with custom webpack build",
   "main": "index.js",
-  "repository": "",
+  "repository": "https://github.com/jtbitt/todos-custom-webpack.git",
   "author": "Jay Bittner <jaybittner@gmail.com>",
   "license": "MIT",
   "private": false,
