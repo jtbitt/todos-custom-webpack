@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Input, Select, MenuItem, Grid } from '@components';
 import { SelectChangeEvent } from '@mui/material';
 
+import { Input, Select, MenuItem, Grid } from '@components';
 import { useAppDispatch } from '@store';
 import { todosActions } from '../redux/todosSlice';
 
@@ -21,7 +21,7 @@ export const DataFilter = ({ data }: any) => {
 
   return (
     <Grid container spacing={2} direction="row">
-      <Grid item xs={12} lg={6} sx={{ marginTop: '1.3rem' }}>
+      <Grid item xs={12} lg={6} sx={{ marginTop: '1.45rem' }}>
         <Input
           placeholder="Search todos..."
           onChange={handleSearchQuery}
@@ -44,28 +44,4 @@ export const DataFilter = ({ data }: any) => {
   );
 };
 
-export const styles = {
-  table: {
-    width: '100%',
-    marginTop: '20px',
-    marginBottom: '20px',
-    border: '1px solid lightgray',
-  },
-  head: {
-    textAlign: 'left' as const,
-  },
-  borderBottom: {
-    borderBottom: '1px solid lightgray',
-  },
-  number: {
-    width: '5%',
-    padding: '20px 10px',
-  },
-  title: {
-    width: '80%',
-  },
-  completed: {
-    width: '10%',
-    paddingRight: '10px',
-  },
-};
+export const styles = {};

@@ -3,6 +3,6 @@ export { Box } from './Box';
 export { Grid } from './Grid';
 export { Container } from './Container';
 export { Paper } from './Paper';
-export { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from './Table';
+export { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TableFooter, TablePagination } from './Table';
 export { Input } from './Input';
 export { Select, MenuItem } from './Select';

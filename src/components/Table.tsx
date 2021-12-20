@@ -5,12 +5,16 @@ import {
   TableContainer as MUITableContainer,
   TableHead as MUITableHead,
   TableRow as MUITableRow,
+  TableFooter as MUITableFooter,
+  TablePagination as MUITablePagination,
   TableProps,
   TableBodyProps,
   TableCellProps,
   TableContainerProps,
   TableHeadProps,
   TableRowProps,
+  TableFooterProps,
+  TablePaginationProps,
 } from '@mui/material';
 
 export const Table = (props: TableProps) => <MUITable {...props} />;
@@ -26,3 +30,11 @@ export const TableContainer = (props: TableContainerProps) => (
 export const TableHead = (props: TableHeadProps) => <MUITableHead {...props} />;
 
 export const TableRow = (props: TableRowProps) => <MUITableRow {...props} />;
+
+export const TableFooter = (props: TableFooterProps) => (
+  <MUITableFooter {...props} />
+);
+
+export const TablePagination = (props: TablePaginationProps) => (
+  <MUITablePagination {...props} />
+);

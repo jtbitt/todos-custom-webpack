@@ -18,14 +18,6 @@ export const filterTodos = (todos: any, query: any) => {
 
 export const paginateTodos = (todos: any, begin: number, end: number) => [...todos].slice(begin, end);
 
-// export const gotoPreviousPage = (event: React.MouseEvent<HTMLButtonElement>) => {
-//   onPageChange(event, page - 1);
-// };
-
-// export const gotoNextPage = (event: React.MouseEvent<HTMLButtonElement>) => {
-//   onPageChange(event, page + 1);
-// };
-
 export const getCurrentTodos = (todos: any, searchQuery: string, completed: string) => {
   if (!searchQuery.length && completed === "all") {
     return todos;
@@ -34,6 +26,10 @@ export const getCurrentTodos = (todos: any, searchQuery: string, completed: stri
   const searchedTodos = searchTodos(todos, searchQuery);
   const filteredTodos = filterTodos(searchedTodos, completed);
   return filteredTodos;
+}
+
+export const getCurrentPagination = (todos: any, pageSize: number, currentPage: number) => {
+  return { count: todos.length, pageSize: pageSize, currentPage: currentPage }
 }
 
 export const fetchingSelector = createSelector(
@@ -51,5 +47,5 @@ export const todosSelector = createSelector(
 
 export const paginationSelector = createSelector(
   selectTodos,
-  ({ todos, searchQuery, completed }) => getCurrentTodos(todos, searchQuery, completed),
+  ({ todos, pageSize, currentPage }) => getCurrentPagination(todos, pageSize, currentPage),
 );

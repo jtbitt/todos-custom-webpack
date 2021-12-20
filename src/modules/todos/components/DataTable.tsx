@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import {
   Table,
   TableBody,
@@ -5,6 +6,8 @@ import {
   TableContainer,
   TableHead,
   TableRow,
+  TableFooter,
+  TablePagination,
 } from '@components';
 
 interface IDataTableProps {
@@ -12,6 +15,30 @@ interface IDataTableProps {
 }
 
 export const DataTable = ({ todos }: IDataTableProps) => {
+  const [page, setPage] = useState(0);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
+
+  const emptyRows =
+    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - todos.length) : 0;
+
+  useEffect(() => {
+    setPage(0);
+  }, [todos]);
+
+  const handleChangePage = (
+    event: React.MouseEvent<HTMLButtonElement> | null,
+    newPage: number,
+  ) => {
+    setPage(newPage);
+  };
+
+  const handleChangeRowsPerPage = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    setRowsPerPage(parseInt(event.target.value, 10));
+    setPage(0);
+  };
+
   return (
     <TableContainer>
       <Table sx={{ minWidth: 650 }}>
@@ -23,41 +50,37 @@ export const DataTable = ({ todos }: IDataTableProps) => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {todos.map((todo: any) => (
+          {(rowsPerPage > 0
+            ? todos.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+            : todos
+          ).map((todo: any) => (
             <TableRow key={todo.id}>
               <TableCell>{todo.id}</TableCell>
               <TableCell>{todo.title}</TableCell>
               <TableCell>{todo.completed ? 'true' : 'false'}</TableCell>
             </TableRow>
           ))}
+          {emptyRows > 0 && (
+            <TableRow style={{ height: 53 * emptyRows }}>
+              <TableCell colSpan={6} />
+            </TableRow>
+          )}
         </TableBody>
+        <TableFooter>
+          <TableRow>
+            <TablePagination
+              rowsPerPageOptions={[5, 10, 25]}
+              count={todos.length}
+              rowsPerPage={rowsPerPage}
+              page={page}
+              onPageChange={handleChangePage}
+              onRowsPerPageChange={handleChangeRowsPerPage}
+            />
+          </TableRow>
+        </TableFooter>
       </Table>
     </TableContainer>
   );
 };
 
-export const styles = {
-  table: {
-    width: '100%',
-    marginTop: '20px',
-    marginBottom: '20px',
-    border: '1px solid lightgray',
-  },
-  head: {
-    textAlign: 'left' as const,
-  },
-  borderBottom: {
-    borderBottom: '1px solid lightgray',
-  },
-  number: {
-    width: '5%',
-    padding: '20px 10px',
-  },
-  title: {
-    width: '80%',
-  },
-  completed: {
-    width: '10%',
-    paddingRight: '10px',
-  },
-};
+export const styles = {};

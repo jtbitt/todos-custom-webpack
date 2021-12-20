@@ -8,7 +8,7 @@ interface ILayoutProps {
 
 export const Layout = ({ children }: ILayoutProps) => (
   <Container maxWidth="lg">
-    <Box height="100vh" padding="1rem 0.5rem">
+    <Box padding="1rem 0.5rem">
       <Paper>
         <Box
           height="100%"
