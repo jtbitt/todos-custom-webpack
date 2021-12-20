@@ -5,7 +5,7 @@ This project is a demo coding challenge using a custom webpack configuration fro
 ## Structure
 
 - /public -> static assets, index.html only
-- /src/api -> Communication with Open Trivia DB
+- /src/api -> Communication with Jsonplaceholder api
 - /src/components -> Reusable components, mostly based on MUI
 - /src/modules -> Feature like architecture, home, and quiz
 - /src/store -> Redux state management
