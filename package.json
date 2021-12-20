@@ -10,7 +10,7 @@
   "private": false,
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "start": "webpack serve --config webpack.dev.js",
     "test": "jest",
     "test:coverage": "yarn test --coverage",
