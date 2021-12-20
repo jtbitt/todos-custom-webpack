@@ -8,7 +8,7 @@ import todos from "./todos.json";
 describe('todosSelectors utils', () => {
   it('searchTodos function should work properly', () => {
     expect(searchTodos(todos, "DELecTus").length).toEqual(7);
-    expect(searchTodos(todos, "DELecTus")[0].title).toEqual('delectus');
+    expect(searchTodos(todos, "DELecTus")[0].title).toEqual(expect.stringContaining('delectus'));
     expect(searchTodos(todos, "$$#@dD@##")).toEqual([]);
   });
 

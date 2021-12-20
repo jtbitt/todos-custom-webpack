@@ -9,7 +9,17 @@
   "private": false,
   "scripts": {
     "start": "webpack serve --config webpack.dev.js",
+    "test": "jest",
+    "test:coverage": "yarn test --coverage",
     "build": "webpack --config webpack.prod.js"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^@api(.*)$": "<rootDir>/src/api"
+    },
+    "setupFiles": [
+      "./setupTests.js"
+    ]
   },
   "dependencies": {
     "@emotion/react": "^11.5.0",
