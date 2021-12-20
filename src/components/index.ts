@@ -1,8 +1,11 @@
+export { Heading } from './Heading';
+export { Typography } from './Typography';
+export { Button } from './Button';
+export { Input } from './Input';
+export { Select, MenuItem } from './Select';
 export { LoadingIndicator } from './LoadingIndicator';
 export { Box } from './Box';
 export { Grid } from './Grid';
 export { Container } from './Container';
 export { Paper } from './Paper';
 export { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TableFooter, TablePagination } from './Table';
-export { Input } from './Input';
-export { Select, MenuItem } from './Select';

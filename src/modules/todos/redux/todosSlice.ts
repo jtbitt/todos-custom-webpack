@@ -11,8 +11,6 @@ export interface ITodosState {
   todos: TTodo[];
   searchQuery: string;
   completed: string;
-  pageSize: number;
-  currentPage: number;
   isError: boolean;
   isLoading: boolean;
 }
@@ -21,8 +19,6 @@ export const initialState: ITodosState = {
   todos: [],
   searchQuery: "",
   completed: "",
-  pageSize: 20,
-  currentPage: 1,
   isLoading: true,
   isError: false,
 };

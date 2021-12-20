@@ -7,18 +7,16 @@ import { TTodo } from './todosSlice';
 const selectSelf = (state: RootState) => state;
 const selectTodos = createSelector(selectSelf, (state) => state.todos);
 
-export const searchTodos = (todos: any, query: string) => {
+export const searchTodos = (todos: TTodo[], query: string) => {
   return [...todos].filter(todo => todo['title'].toLowerCase().includes(query.toLowerCase()));
 };
 
-export const filterTodos = (todos: any, query: any) => {
+export const filterTodos = (todos: TTodo[], query: string) => {
   const filteredTodos = [...todos].filter(todo => todo['completed'].toString() === query);
   return filteredTodos.length ? filteredTodos : todos;
 }
 
-export const paginateTodos = (todos: any, begin: number, end: number) => [...todos].slice(begin, end);
-
-export const getCurrentTodos = (todos: any, searchQuery: string, completed: string) => {
+export const getCurrentTodos = (todos: TTodo[], searchQuery: string, completed: string) => {
   if (!searchQuery.length && completed === "all") {
     return todos;
   }
@@ -26,10 +24,6 @@ export const getCurrentTodos = (todos: any, searchQuery: string, completed: stri
   const searchedTodos = searchTodos(todos, searchQuery);
   const filteredTodos = filterTodos(searchedTodos, completed);
   return filteredTodos;
-}
-
-export const getCurrentPagination = (todos: any, pageSize: number, currentPage: number) => {
-  return { count: todos.length, pageSize: pageSize, currentPage: currentPage }
 }
 
 export const fetchingSelector = createSelector(
@@ -43,9 +37,4 @@ export const fetchingSelector = createSelector(
 export const todosSelector = createSelector(
   selectTodos,
   ({ todos, searchQuery, completed }) => getCurrentTodos(todos, searchQuery, completed),
-);
-
-export const paginationSelector = createSelector(
-  selectTodos,
-  ({ todos, pageSize, currentPage }) => getCurrentPagination(todos, pageSize, currentPage),
 );

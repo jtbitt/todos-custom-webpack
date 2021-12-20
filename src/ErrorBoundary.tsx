@@ -1,6 +1,6 @@
 import { Component, ReactNode, ErrorInfo } from 'react';
 
-// import { Heading, Typography, Button } from '@components';
+import { Heading, Typography, Button } from '@components';
 
 interface IErrorBoundaryProps {
   children: ReactNode;
@@ -37,7 +37,7 @@ export class ErrorBoundary extends Component<
     if (hasError) {
       return (
         <>
-          {/* <Heading>Woops 🙈</Heading>
+          <Heading>Woops 🙈</Heading>
           <Typography align="center" variant="body2" gutterBottom>
             Something went wrong on our end, the below button is not AZ-5, what
             could go wrong...
@@ -48,7 +48,7 @@ export class ErrorBoundary extends Component<
             onClick={this.handleRefreshClick}
           >
             Refresh
-          </Button> */}
+          </Button>
         </>
       );
     }

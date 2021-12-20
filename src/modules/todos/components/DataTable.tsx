@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+
 import {
   Table,
   TableBody,
@@ -10,17 +11,21 @@ import {
   TablePagination,
 } from '@components';
 
+import { TTodo } from '../redux/todosSlice';
+
 interface IDataTableProps {
-  todos: any;
+  todos: TTodo[];
 }
 
 export const DataTable = ({ todos }: IDataTableProps) => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
 
+  // handle empty rows on last page
   const emptyRows =
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - todos.length) : 0;
 
+  // reset to first page whenever filtered
   useEffect(() => {
     setPage(0);
   }, [todos]);
@@ -53,7 +58,7 @@ export const DataTable = ({ todos }: IDataTableProps) => {
           {(rowsPerPage > 0
             ? todos.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
             : todos
-          ).map((todo: any) => (
+          ).map((todo: TTodo) => (
             <TableRow key={todo.id}>
               <TableCell>{todo.id}</TableCell>
               <TableCell>{todo.title}</TableCell>

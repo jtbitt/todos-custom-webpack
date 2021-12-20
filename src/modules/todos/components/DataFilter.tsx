@@ -5,7 +5,7 @@ import { Input, Select, MenuItem, Grid } from '@components';
 import { useAppDispatch } from '@store';
 import { todosActions } from '../redux/todosSlice';
 
-export const DataFilter = ({ data }: any) => {
+export const DataFilter = () => {
   const [completed, setCompleted] = useState('all');
   const dispatch = useAppDispatch();
 
