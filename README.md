@@ -7,7 +7,7 @@ This project is a demo coding challenge using a custom webpack configuration fro
 - /public -> static assets, index.html only
 - /src/api -> Communication with Jsonplaceholder api
 - /src/components -> Reusable components, mostly based on MUI
-- /src/modules -> Feature like architecture, home, and quiz
+- /src/modules -> Feature like architecture, todos
 - /src/store -> Redux state management
 
 ## Installation
