@@ -1,6 +1,6 @@
 {
   "name": "todos-custom-webpack",
-  "homepage": "https://jtbitt.github.io/todos-custom-webpack",
+  "homepage": "https://jtbitt.github.io/todos-custom-webpack/",
   "version": "0.0.1",
   "description": "Demo coding challenge with custom webpack build",
   "main": "index.js",
