@@ -1,6 +1,5 @@
 {
   "name": "todos-custom-webpack",
-  "homepage": "https://jtbitt.github.io/todos-custom-webpack/",
   "version": "0.0.1",
   "description": "Demo coding challenge with custom webpack build",
   "main": "index.js",
@@ -9,8 +8,6 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
     "start": "webpack serve --config webpack.dev.js",
     "test": "jest",
     "test:coverage": "yarn test --coverage",
@@ -32,7 +29,6 @@
     "babel-jest": "^27.3.1",
     "connected-react-router": "^6.9.1",
     "core-js": "3",
-    "gh-pages": "^3.2.3",
     "he": "^1.2.0",
     "jest": "^27.3.1",
     "jest-fetch-mock": "^3.0.3",
