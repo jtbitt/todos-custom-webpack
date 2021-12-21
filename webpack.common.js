@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: './src/index.tsx',
   output: {
-    publicPath: '/',
+    publicPath: '/todos-custom-webpack',
   },
   module: {
     rules: [
